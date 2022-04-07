@@ -5,6 +5,13 @@
 
 #include "FilterGeneric.h"
 #include "FilterOdd.h"
+#include "FilterNonPositive.h"
+#include "FilterForTwoDigitPositive.h"
+
+#include "ReduceGeneric.h"
+#include "ReduceMinimum.h"
+#include "ReduceGCD.h"
+
 #include <iostream>
 #include <vector>
 
