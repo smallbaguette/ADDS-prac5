@@ -35,12 +35,12 @@ int main() {
     FilterGeneric* filter2 = new FilterOdd();
     newOne = filter2->filter(newOne);
 
-    std::vector<int> min;
-    std::vector<int> gcd;
+    //std::vector<int> min;
+    //std::vector<int> gcd;
     ReduceGeneric* reduce1 = new ReduceMinimum();
-    min = reduce1->reduce(newOne);
+    //min = reduce1->reduce(newOne);
     ReduceGeneric* reduce2 = new ReduceGCD();
-    gcd = reduce2->reduce(newOne);
+    //gcd = reduce2->reduce(newOne);
 
     /*for (std::size_t i = 0, max = min.size(); i != max; ++i) {
         std::cout<<min.at(i)<<" ";
@@ -50,7 +50,7 @@ int main() {
         std::cout<<gcd.at(i)<<" ";
     } */
 
-    std::cout<<min.at(0)<<" "<<gcd.at(0)<<std::endl;
+    std::cout<<reduce1->reduce(newOne)<<" "<<reduce2->reduce(newOne)<<std::endl;
 
     return 0;
 }
