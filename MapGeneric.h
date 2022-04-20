@@ -6,7 +6,8 @@
 
 class MapGeneric {
 private:
-    virtual int f(int)=0;
+    virtual int f(int n)=0;
+    std::vector<int> newVector;
 public:
     std::vector<int> map(std::vector<int> v);
 };
