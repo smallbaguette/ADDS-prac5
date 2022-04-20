@@ -10,25 +10,44 @@
 
 #include "ReduceGeneric.h"
 #include "ReduceMinimum.h"
-#include "ReduceGCD.h"
+#include "ReduceGCD.h" 
 
 #include <iostream>
 #include <vector>
 
 int main() {
-    std::vector<int> integers;
-    int input;
+    std::vector<int> integers = {6, -11, 53, -16, 73, 128, 105, 104, -71, -179, 102, 12, 21, -145, -99, 199,-156, -186, 43, -189};
+    std::vector<int> newOne;
+    /*int input;
     for (int i=0; i<7; i++) {
         std::cout<<"Enter integer "<<i+1<<": ";
         std::cin>>input;
         integers.push_back(input);
-    }
+    }*/
     
-    std::vector<int> newOne;
-    FilterOdd pain;
+    MapGeneric* map1 = new MapTriple();
+    newOne = map1->map(integers);
+    MapGeneric* map2 = new MapAbsoluteValue();
+    newOne = map2->map(newOne);
 
-    for (auto x : pain.filter(integers)) {
-        std::cout<<x<<std::endl;
+    FilterGeneric* filter1 = new FilterForTwoDigitPositive();
+    newOne = filter1->filter(newOne);
+    FilterGeneric* filter2 = new FilterOdd();
+    newOne = filter2->filter(newOne);
+
+    std::vector<int> min;
+    std::vector<int> gcd;
+    ReduceGeneric* reduce1 = new ReduceMinimum();
+    min = reduce1->reduce(newOne);
+    ReduceGeneric* reduce2 = new ReduceGCD();
+    gcd = reduce2->reduce(newOne);
+
+    for (std::size_t i = 0, max = min.size(); i != max; ++i) {
+        std::cout<<min.at(i)<<" ";
+    }
+
+    for (std::size_t i = 0, max = gcd.size(); i != max; ++i) {
+        std::cout<<gcd.at(i)<<" ";
     }
 
     return 0;

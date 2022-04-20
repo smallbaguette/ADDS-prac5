@@ -5,8 +5,8 @@
 
 bool FilterNonPositive::g(int n) {
     if (n < 0) {
-        return false;
-    } else {
         return true;
+    } else {
+        return false;
     }
 }

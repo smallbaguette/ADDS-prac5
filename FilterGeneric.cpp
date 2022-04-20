@@ -3,16 +3,21 @@
 #include <vector>
 
 std::vector<int> FilterGeneric::filter(std::vector<int> v) {
+
     int num;
-    std::vector<int> newVector;
+    bool passesTest;
+    
     if (v.size()==1) {
         num = v.at(0);
-        if (g(num) == false) {
+        passesTest = g(num);
+        if (passesTest == true) {
             newVector.push_back(num);
         }
+
     } else {
         num = v.at(0);
-        if (g(num) == false) {
+        passesTest = g(num);
+        if (passesTest == true) {
             newVector.push_back(num);
         }
         v.erase(v.begin());

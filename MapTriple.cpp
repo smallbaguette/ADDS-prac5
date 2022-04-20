@@ -3,6 +3,6 @@
 #include <iostream>
 #include <vector>
 
-int MapAbsoluteValue::f(int n) {
+int MapTriple::f(int n) {
     return 3*n;
 }

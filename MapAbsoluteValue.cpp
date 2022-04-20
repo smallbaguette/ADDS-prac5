@@ -3,10 +3,10 @@
 #include <iostream>
 #include <vector>
 
-int MapTriple::f(int n) {
+int MapAbsoluteValue::f(int n) {
     if (n>=0) {
         return n;
     } else {
-        return n*-1;
+        return n*(-1);
     }
 }
