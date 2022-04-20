@@ -16,14 +16,14 @@
 #include <vector>
 
 int main() {
-    std::vector<int> integers = {6, -11, 53, -16, 73, 128, 105, 104, -71, -179, 102, 12, 21, -145, -99, 199,-156, -186, 43, -189};
+    std::vector<int> integers;
     std::vector<int> newOne;
-    /*int input;
-    for (int i=0; i<7; i++) {
+    int input;
+    for (int i=0; i<20; i++) {
         std::cout<<"Enter integer "<<i+1<<": ";
         std::cin>>input;
         integers.push_back(input);
-    }*/
+    }
     
     MapGeneric* map1 = new MapTriple();
     newOne = map1->map(integers);
@@ -42,13 +42,15 @@ int main() {
     ReduceGeneric* reduce2 = new ReduceGCD();
     gcd = reduce2->reduce(newOne);
 
-    for (std::size_t i = 0, max = min.size(); i != max; ++i) {
+    /*for (std::size_t i = 0, max = min.size(); i != max; ++i) {
         std::cout<<min.at(i)<<" ";
     }
 
     for (std::size_t i = 0, max = gcd.size(); i != max; ++i) {
         std::cout<<gcd.at(i)<<" ";
-    }
+    } */
+
+    std::cout<<min.at(0)<<" "<<gcd.at(0)<<std::endl;
 
     return 0;
 }
