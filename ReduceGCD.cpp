@@ -5,8 +5,12 @@
 
 int ReduceGCD::binaryOperator(int n, int i) {
 
-    if (i == 0) {
-        return n;
+    while (n != i) {
+        if (n > i) {
+            n -= i;
+        } else {
+            i -= n;
+        }
     }
-    return binaryOperator(i, n % i);
+    return n;
 }
