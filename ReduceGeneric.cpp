@@ -7,7 +7,8 @@ int ReduceGeneric::reduce(std::vector<int> v) {
     
     if (v.size()==1) {
         return num;
-    } 
-    v.erase(v.begin());
-    return binaryOperator(num, reduce(v));
+    } else {
+        v.erase(v.begin());
+        return binaryOperator(num, reduce(v));
+    }
 }
