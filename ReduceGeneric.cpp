@@ -11,7 +11,6 @@ int ReduceGeneric::reduce(std::vector<int> v) {
 
     } else {
         num = binaryOperator(v.at(0), v.at(1));
-        newVector.push_back(num);
         v.erase(v.begin());
         reduce(v);
     }
