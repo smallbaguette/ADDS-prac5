@@ -3,7 +3,7 @@
 #include <vector>
 
 int ReduceGeneric::reduce(std::vector<int> v) {
-    int num;
+    /*int num;
     
     if (v.size()==1) {
         num = v.at(0);
@@ -14,5 +14,12 @@ int ReduceGeneric::reduce(std::vector<int> v) {
         v.erase(v.begin());
         reduce(v);
     }
-    return num;
+    return num; */
+
+    int num = v.back();
+    if (v.size() == 1) {
+        return num;
+    }
+    v.pop_back();
+    return binaryOperator(num, reduce(v));
 }
