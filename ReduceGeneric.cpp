@@ -10,8 +10,10 @@ int ReduceGeneric::reduce(std::vector<int> v) {
         return num;
 
     } else {
+        num = binaryOperator(v.at(0), v.at(1));
+        newVector.push_back(num);
         v.erase(v.begin());
-        num = binaryOperator(v.at(0), reduce(v));  
+        reduce(v);
     }
     return num;
 }
